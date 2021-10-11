@@ -1,0 +1,42 @@
+*{
+	box-sizing: border-box;
+}
+body{
+	display: grid;
+	position: relative;
+	--headerHeight: 100px;
+	/*grid-template-areas: "head head head" "l-side main r-side";*/
+	margin: 0px;
+	border-collapse: collapse;
+}
+header{
+	border: 1px solid black;
+	height: var(--headerHeight);
+}
+#fileN{
+	width: 150px;
+	height: calc(100vh - 100px);
+	border: 1px solid black;
+}
+#chatU{
+	position: absolute;
+	top: var(--headerHeight);
+	right: 0px;
+	--chatWidth: 300px;
+	width: var(--chatWidth);
+	height: calc(100vh - 100px);
+	border: 1px solid black;
+}
+main{
+	position: absolute;
+	top: var(--headerHeight);
+	left: 150px;
+	right: var(--chatWidth);
+	border: 1px  dash orange;
+}
+textarea{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	resize: none;
+}
