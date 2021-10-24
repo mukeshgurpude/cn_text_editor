@@ -4,13 +4,48 @@
 	<meta charset="utf-8">
 	<title>Text editor</title>
 	<link rel="stylesheet" type="text/css" href="index.css">
+	<!--Icon link-->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
 </head>
 <body>
 	<header>
+		<div class="tools-head">
+			<div class="tool"><button type="button" class="tool-btn"><i class="bi bi-text-left"></i></button></div>
+			<div class="tool"><button type="button" class="tool-btn"><i class="bi bi-text-center"></i></button></div>
+			<div class="tool"><button type="button" class="tool-btn"><i class="bi bi-text-right"></i></button></div>
+			<div class="tool"><button type="button" class="tool-btn"><i class="bi bi-type-bold"></i></button></div>
+			<div class="tool"><button type="button" class="tool-btn"><i class="bi bi-type-italic"></i></button></div>
+			<div class="tool"><button type="button" class="tool-btn"><i class="bi bi-type-underline"></i></button></div>
+			<div class="tool"><button type="button" class="tool-btn"><i class="bi bi-list-ul"></i></button></div>
+			<div class="tool"><button type="button" class="tool-btn"><i class="bi bi-list-ol"></i></button></div>
+			<div class="tool"><button type="button" class="tool-btn"><i class="bi bi-link"></i></button></div>
+		</div>
+		<div class="log">
+			<div class="user-list">
+			</div>
+			<div class="log-out">
+				<input type="button" name="Log out" value="log-out" class="log-out">
+			</div>
+		</div>
 	</header>
 	<aside id="fileN"></aside>
-	<main><textarea></textarea></main>
+	<main id="output" contenteditable="true"></main>
 	<aside id="chatU"></aside>
-
+	<script type="text/javascript">
+		let output = document.getElementById('output');
+		let buttons = document.getElementsByClassName('tool-btn');
+		for (let btn of buttons) {
+			btn.addEventListener('click', () => {
+				let cmd = btn.dataset['command'];
+				if(cmd === 'createlink') {
+					let url = prompt("Enter the link here: ", "http:\/\/");
+					document.execCommand(cmd, false, url);
+				} else {
+					document.execCommand(cmd, false, null);
+				}
+			})
+		}
+		
+	</script>
 </body>
 </html>

@@ -8,10 +8,49 @@ body{
 	/*grid-template-areas: "head head head" "l-side main r-side";*/
 	margin: 0px;
 	border-collapse: collapse;
+	background-color: grey;
 }
+/*Header styling*/
 header{
-	border: 1px solid black;
+	border: 5px solid orange;
 	height: var(--headerHeight);
+	background-image: linear-gradient(315deg, #485461 0%, #28313b 74%);
+	border-radius: 5px;
+}
+header .log{
+	display: flex;
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	margin-right: 20px;
+	margin-top: 20px;
+}
+header .log .log-out{
+	font-weight: 700;
+	height: 40px;
+	width: 80px;
+	background-color: orange;
+	border-radius: 5px;
+	border: 1px solid black;
+}
+header .user-list{
+
+}
+.tools-head{
+	display: flex;
+	padding: 20px,40px,20px,20px;
+	margin: 1%;
+	overflow: hidden;
+}
+.tool-btn {
+	display: block;
+	color: black;
+	border: none;
+	background-color: orange;
+	border: 1px solid black;
+	margin-right: 15px;
+	padding: 15px;
+	border-radius: 10px;
 }
 #fileN{
 	width: 150px;
@@ -27,16 +66,11 @@ header{
 	height: calc(100vh - 100px);
 	border: 1px solid black;
 }
-main{
+#output{
 	position: absolute;
 	top: var(--headerHeight);
 	left: 150px;
 	right: var(--chatWidth);
-	border: 1px  dash orange;
-}
-textarea{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	resize: none;
+	border: 10px  dash orange;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
 }
